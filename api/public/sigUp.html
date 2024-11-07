@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megadeht/Log In</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+
+
+</head>
+<link rel="icon" type="image/x-icon" href="Imagenes/favicon-32x32.png">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<body class=" bg-cover bg-no-repeat bg-contain" style="background-image: url(https://wallpapercave.com/wp/3EkaZns.jpg)">
+  <header class="header max-sm text-center sm:text-left @media not all and (min-width: 640px) ">
+        <nav class="nav-li">
+            <ul class="contanier">
+                <li> <a href="index.html"><img src="Imagenes/Logo.png" alt="" height="60" width="150px"></a> </li>
+                <li><a href="la-banda.html">La Banda</a></li>
+                <li><a href="sigUp.html">Log In</a> </li>
+                <li><a href="landindSigUp.html">Tu Música</a></li>
+                <li><a href="discografia.html">Discografía</a></li>
+                <li><a href="tours2024.html">World Tour 2024</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <br><br><br><br><br><br><br><br><br><br>
+
+   
+        <form class="form-registro" id="login-form" method="POST" action="landindSigUp.html">
+            <img src="Imagenes/WhatsApp Image 2024-09-04 at 22.15.17.jpeg" alt="">
+            <h3 class="registrado" >Segui Rockeando! Registrate</h3>
+        <input class="registro" type="text" name="Nombres" id="nombre" placeholder=" Ingrese su nombre" value="">
+        <input class="registro"type="text" name="Apellidos" id="Apellidos" placeholder=" Ingrese sus apellidos">
+        <input class="registro"type="text" name="email" id="email" placeholder=" Enter your email address" value="">
+        <input class="registro" type="password" name="Password" id="password" placeholder=" Ingrese su Password" value=""><br>
+        
+        <button id="button-registrar" class="rounded-full  hover:bg-slate-500"  ><input class="botons" name="Registrar" type="submit" value="" onclick="login()" >Registrar</button>
+        <p class="registrado"><a href="sigUpUR.html" class="hover:bg-slate-500"><u>Soy un usuario registrado</u></a></p>
+        
+
+
+        
+        <script src="sigUp.js"></script>
+        
+
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Música</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Song</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<link rel="icon" type="image/x-icon" href="Imagenes/favicon-32x32.png">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<body class=" bg-cover bg-no-repeat bg-contain" style="background-image: url(https://wallpapercave.com/wp/3EkaZns.jpg)">
+<body>
+    <header class="header max-sm text-center sm:text-left @media not all and (min-width: 640px) ">
+        <nav class="nav-li">
+            <ul class="contanier">
+                <li> <a href="index.html"><img src="Imagenes/Logo.png" alt="" height="60" width="150px"></a> </li>
+                <li><a href="la-banda.html">La Banda</a></li>
+                <li><a href="sigUp.html">Log In</a> </li>
+                <li><a href="landindSigUp.html">Tu Música</a></li>
+                <li><a href="discografia.html">Discografía</a></li>
+                <li><a href="tours2024.html">World Tour 2024</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    </div>
+    <div class="contenido pt-20">
+        <div class="width height background-color" style="height: 100vw; width:25%; background-color: black;"> 
+            <div class="siderbar">
+                <div class="usuario"> <div><img id="imagen-proto-persona" src="Imagenes/image (8).png" alt=""></div><div class="items-stretch" align-items: stretch;>Alvaro Valerio</div></div>
+                <div id="div"><a href="landindSigUp.html">Otros Albumes</a></div>
+                    <div id="div"><a href="addAbum.html">Editar Albúm</a></div>
+                    <div id="div"><a href="addSong.html">Agregar Canción</a></div>
+                    <div id="div"><a href="sigUp.html">Log Out</a></div>
+            </div>
+           
+        </div>
+        <div class="div-centro-canción "> 
+
+            
+
+            <div class="contenedor-editar-canción"> 
+                <h2 class="font-large text-2xl" ><span>Agregar Canción</span></h2><br>
+                <form action="" method="post" id="Agregar" >
+                <label class="editar-canción "> Titulo <br><input class="placeholder-editar" id="addSong" type="text" value="" placeholder="Agregar Nombre de la Canción"  ></label><br>
+                <label class="editar-canción">Duración<br><input class="placeholder-editar" id="addDuracion" type="text" value="" placeholder="Agregar Duración" ></label><br>
+                <label class="editar-canción">Agregar URL<br><input class="placeholder-editar" id="addUrl" type="text" value="" placeholder="Agregar URL/Vinculo de Youtube" ></label><br>
+                <button  id="button-agregar-canción" ><a href="#" ></a> Guardar<input  type="submit" value=""></button><span> </span><button  id="button-agregar-canción" ><a href="#" ></a> Cancelar<input  type="submit" value=""></button>
+                
+            </form></div>
+            <div></div>
+            <div></div>
+
+        </div>
+
+    </div>
+
+    <script src="addSong.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+</body>
+</html>
