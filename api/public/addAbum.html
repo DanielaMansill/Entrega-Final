@@ -14,8 +14,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.css">
 
-<body>
+<body class=" bg-cover bg-no-repeat bg-contain" style="background-image: url(https://mmhradio.co.uk/wp-content/uploads/2020/03/IMG_20200324_101139.jpg)">
     <header class="header max-sm text-center sm:text-left @media not all and (min-width: 640px) ">
         <nav class="nav-li">
             <ul class="contanier">
@@ -47,22 +48,29 @@
             <div class="contenedor-editar">
                 <h2 class="font-large text-2xl mt-0.5"><span class="album-title">Agregar Álbum</span></h2><br>
                 <form id="Agregar" method="POST" action="/api/albums">
-                    <label class="editar-album"> Título <br>
-                        <input class="placeholder-editar" id="addSong" type="text" placeholder="Agregar Nombre del álbum">
+                   <label class="editar-album"> Título <br>
+                        <input class="placeholder-editar" id="Titulo" type="text" placeholder="Agregar Nombre del álbum">
                     </label><br>    
                     <label class="editar-album">Año de Lanzamiento <br>
                         <input class="placeholder-editar" type="text" id="Año_de_lanzamiento" name="Año_de_lanzamiento" placeholder="Agregar Año de Lanzamiento">
 
                     </label><br>
                     <label class="editar-album">Descripción <br>
-                        <textarea class="placeholder-editar" id="descripcion" rows="10" cols="20" placeholder="Descripción"></textarea>
+                        <textarea class="placeholder-editar" id="Descripción" rows="10" cols="20" placeholder="Descripción"></textarea>
                     </label><br>
                     <label class="editar-album">Agregar URL<br>
                         <input class="placeholder-editar" type="text" id="url" placeholder="Agregar URL">
                     </label><br>
-                    <button type="button" id="button-agregar">Agregar Álbum</button>
+                    <button type="button" id="button-agregar" >Agregar Álbum</button>
+
+                 
+
+
                 </form>
             </div>
+            <!-- <button type="button" >consultar Álbum</button>
+
+            <input type="text"> -->
 
         </div>
         <div class="addAlbum" id="album-container">

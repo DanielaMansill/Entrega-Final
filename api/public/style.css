@@ -1,20 +1,19 @@
-body{
+body {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
     margin: 0;
     padding: 0;
     color: black;
     font-family: "Bebas Neue", sans-serif;
     justify-content: space-evenly;
-   
-    @media not all and (min-width: 768px)
+     /* Agregar un padding para evitar que el contenido quede debajo de la barra fija */
 }
-.header{
+.header {
     position: fixed;
     z-index: 100;
-
+    top: 0;
+    width: 100vw;
 }
+
 .contanier{
     background-color: black;
     height: 80px;
@@ -195,6 +194,7 @@ text-align: center;
     border-style: solid;
     
     
+    
 }
 #div{
     margin-left: 10px;
@@ -247,6 +247,7 @@ text-align: center;
     color: #A6A6A6;
     display: flex;
     flex-direction: row;
+    
     
     background-position: auto;
     background-repeat: no-repeat;
@@ -325,10 +326,10 @@ text-align: center;
 }
 #album-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     width: 100%;
-    max-width: 1200px; /* Ajusta el ancho máximo según tus necesidades */
+    max-width: 1200px; 
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
@@ -365,7 +366,7 @@ text-align: center;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    min-width: 0; /* Permite que se ajuste según el grid */
+    min-width: 0;
 }
 
 .album-item h3 {
@@ -376,30 +377,12 @@ text-align: center;
 .album-item p, .album-item a {
     font-size: 1rem;
 }
-/* .album-list{
-    padding: 400px 40px 40px 40px;
-    width: 100%;
-    height: max-content;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    margin-top: 70px;
-    margin-left: 100px;
-    background: rgba(0, 0, 0, 0.73);
-
-  
-    
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    justify-content: center;
-   
-  } */
-
-
-/* OTROS ALBUMES */
+.album-item .descripcion {
+    max-height: 50px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
 .otros-albumes{
     margin-left: 3px;
@@ -412,23 +395,23 @@ text-align: center;
 
 .div-centro-canción{
   
-    width: 85%;
+    width: 50%;
     height:100vw;
     color: #A6A6A6;
     display: flex;
     flex-direction: row;
-    background-image: url(https://64.media.tumblr.com/tumblr_lyffv5MA9H1r5g3yto1_500.jpg);
+    /* background-image: url(https://64.media.tumblr.com/tumblr_lyffv5MA9H1r5g3yto1_500.jpg);
     background-position: auto;
     background-repeat: no-repeat;
     background-size: contain;
-    background-size: cover;
+    background-size: cover; */
 
 }
 .contenedor-editar-canción{
     height: 400px;
     width: 500px;
     margin-top: 70px;
-    margin-left: 300px;
+    margin-left: 80px;
     color: white;
     text-align: center;
     background: rgba(0, 0, 0, 0.73);
@@ -460,6 +443,57 @@ text-align: center;
     color: white;
     border: solid #A6A6A6 2px;
     margin-top: 10px;
+}
+
+.addSongs{
+    margin-top: 70px;
+    background: rgba(0, 0, 0, 0.73);
+    width: 50%;
+    height:100vw;
+    text-align: center;
+    font-weight: 700;
+    font-size: x-large;
+    margin-right: 10px;
+}
+
+
+
+.songs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.song-item {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white; 
+    padding: 5px 10px; 
+    border-radius: 8px; 
+    border-color: white;
+    border-width: 2px;
+    gap: 10px; 
+    font-weight: 400;
+    font-size: large;
+}
+
+.song-item h3 {
+    flex: 1; 
+    margin: 0; 
+    padding: 0;
+}
+
+.song-item p {
+    margin: 0; 
+    padding: 0;
+}
+
+.song-item a {
+    color: #0bd240; 
+    text-decoration: none; 
+    padding-left: 5px; 
 }
 /*-------------------------------------------------------- Landing SigUp----------------------------------------------------------- */
 

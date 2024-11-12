@@ -1,28 +1,19 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-
-
-
-const song = new mongoose.Schema({
-
-    Titulo:{type:String, require:[true, '!Upps, no te olvides de agregar el nombre de tu canción favorita¡']},
-
-    
-        
-    
-    Duración:
-    {type: String,
-    required: [true, '¡No te olvides de agregar la duración de la canción']
-   },
-
-    Agregar_URL:{
-        type:String, require:[true, 'Ingresa URL o Link de Youtube'] 
+const songSchema = new mongoose.Schema({
+    titulo: { 
+        type: String, 
+        required: [true, '!Upps, no te olvides de agregar el nombre de tu canción favorita¡'] 
     },
-    
-    
+    duracion: { 
+        type: String, 
+        required: [true, '¡No te olvides de agregar la duración de la canción'] 
+    },
+    url: { 
+        type: String, 
+        required: [true, 'Ingresa URL o Link de Youtube'] 
+    }
+});
 
-})
+module.exports = mongoose.model('Song', songSchema);
 
-
-
-module.exports = mongoose.model('song', song)

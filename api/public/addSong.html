@@ -14,8 +14,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-<body class=" bg-cover bg-no-repeat bg-contain" style="background-image: url(https://wallpapercave.com/wp/3EkaZns.jpg)">
-<body>
+<link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.css">
+<body class=" bg-cover bg-no-repeat bg-contain" style="background-image: url(https://64.media.tumblr.com/tumblr_lyffv5MA9H1r5g3yto1_500.jpg)">
     <header class="header max-sm text-center sm:text-left @media not all and (min-width: 640px) ">
         <nav class="nav-li">
             <ul class="contanier">
@@ -43,23 +43,29 @@
         </div>
         <div class="div-centro-canción "> 
 
-            
+           
 
             <div class="contenedor-editar-canción"> 
                 <h2 class="font-large text-2xl" ><span>Agregar Canción</span></h2><br>
-                <form action="" method="post" id="Agregar" >
-                <label class="editar-canción "> Titulo <br><input class="placeholder-editar" id="addSong" type="text" value="" placeholder="Agregar Nombre de la Canción"  ></label><br>
-                <label class="editar-canción">Duración<br><input class="placeholder-editar" id="addDuracion" type="text" value="" placeholder="Agregar Duración" ></label><br>
-                <label class="editar-canción">Agregar URL<br><input class="placeholder-editar" id="addUrl" type="text" value="" placeholder="Agregar URL/Vinculo de Youtube" ></label><br>
-                <button  id="button-agregar-canción" ><a href="#" ></a> Guardar<input  type="submit" value=""></button><span> </span><button  id="button-agregar-canción" ><a href="#" ></a> Cancelar<input  type="submit" value=""></button>
+                <form action="/api/songs" method="post" id="Agregar" >
+                <label class="editar-canción "> Titulo <br><input class="placeholder-editar" id="titulo" type="text" value="" placeholder="Agregar Nombre de la Canción"  ></label><br>
+                <label class="editar-canción">Duración<br><input class="placeholder-editar" id="duracion" type="text" value="" placeholder="Agregar Duración" ></label><br>
+                <label class="editar-canción">Agregar URL<br><input class="placeholder-editar" id="Agregar_url" type="text" value="" placeholder="Agregar_url" ></label><br>
+                <button  id="button-agregar-canción" > Guardar<input  type="submit" value=""></button><span> </span><button  id="button-agregar-canción" > Cancelar<input  type="submit" value=""></button>
                 
-            </form></div>
-            <div></div>
-            <div></div>
+            </form> <br><br><button id="buscar-cancion">Buscar canción <input type="text" id="nombre-cancion"class="text-black" placeholder ="Nombre de la Canción"></button></div>
+            
 
         </div>
+        
+        <div class="addSongs" id="song-container">
+            <h2 class="songs-title">Tus canciones</h2>
+            <div id="songs-list" class="songs-list"></div>
+        </div> 
+     
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script src="addSong.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

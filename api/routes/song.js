@@ -1,64 +1,72 @@
 const express = require('express');
-const Song = require('../models/song.js');
 const router = express.Router();
+const Song = require('../models/song');
 
-//-------------------------------------CANCIONES---------------------------------------------------------------------------------
-//Crear 
-router.post('/song', async (req, res)=>{
-    
-    try{
-        await song.create(req.body)
-        res.status(201).send('Canción agregada correctamente')
+// Crear una canción
+router.post('/', async (req, res) => {
+    const newSong = new Song(req.body);
+    try {
+        await newSong.save();
+        res.status(201).json({ _id: newSong._id }); // Asegúrate de enviar el _id
+    } catch (error) {
+        console.log('Error al agregar la canción:', error);
+        res.status(500).send('Error al crear la canción.');
+    }
+});
 
-    }catch (error){
-        console.log(error)
-        res.status(500).send('Error al agregar la canción')
 
+router.get('/', async (req, res) => {
+    try {
+        const result = await Song.find({});
+        res.status(200).json(result);
+    } catch (error) {
+        console.log(error);
+        res.status(404).json({ message: 'No hay canciones' });
     }
-}
-);
-//Read cancion
-router.get('/song' , async(req, res)=>{
-    try{
-       const result = await song.find({})
-       res.status(200).send(result)
-    } catch(error){
-        console.log(error)
-        res.status(404).send('No hay canciones')
-    }
-})
-router.get('/song/:Titulo' , async(req, res)=>{
-    try{
-       const result = await song.find({Titulo: req.params.Titulo})
-       res.status(200).send(result)
-    } catch(error){
-        console.log(error)
-        res.status(404).send('No hay canciones')
-    }
-})
-//put
-router.put('/song/:id' , async(req, res)=>{
-    try{
-        const id = req.params.id
-        const nuevosDatos = req.body
-      await song.findByIdAndUpdate(id, nuevosDatos, {new: true})
-       res.status(200).send("Canción actualizda correctamente.")
-    } catch(error){
-        console.log(error)
-        res.status(500).send('Hubo un error al actualizar la canción, intente nuevamente.')
-    }
-})
-//delete
+});
 
-router.delete('/song/:id' , async(req, res)=>{
-    try{
-        const id = req.params.id
-       
-      await song.findByIdAndDelete(id)
-       res.status(200).send("Canción  eliminada correctamente.")
-    } catch(error){
-        console.log(error)
-        res.status(500).send('Hubo un error al eliminar la canción, intente nuevamente.')
+// Obtener una canción por título
+router.get('/:titulo', async (req, res) => {
+    try {
+        const result = await Song.find({ titulo: req.params.titulo });
+        res.status(200).json(result);
+    } catch (error) {
+        console.log(error);
+        res.status(404).json({ message: 'No hay canciones con ese título' });
     }
-})
+});
+
+
+router.put('/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const nuevosDatos = req.body;
+        const updatedSong = await Song.findByIdAndUpdate(id, nuevosDatos, { new: true });
+        if (updatedSong) {
+            res.status(200).json(updatedSong);
+        } else {
+            res.status(404).json({ message: 'Canción no encontrada' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'Hubo un error al actualizar la canción, intente nuevamente.' });
+    }
+});
+
+// Eliminar una canción
+router.delete('/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        console.log('ID de la canción a eliminar:', id);
+        const deletedSong = await Song.findByIdAndDelete(id);
+        if (deletedSong) {
+            res.status(200).json({ message: "Canción eliminada correctamente." });
+        } else {
+            res.status(404).json({ message: 'Canción no encontrada' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'Hubo un error al eliminar la canción, intente nuevamente.' });
+    }
+});
+
+
 module.exports = router;
