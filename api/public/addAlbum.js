@@ -1,16 +1,4 @@
-const button = document.querySelector('button');
-button.addEventListener('click', consultarAlbum);
-const input = document.querySelector("input");
 
-async function consultarAlbum() {
-  try {
-    const response = await axios.get(`http://localhost:4500/Albums/${input.value}`);
-    console.log(response.data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-  
 
 const buttonAgregar = document.getElementById('button-agregar');
 buttonAgregar.addEventListener('click', agregarAlbum);
@@ -32,12 +20,12 @@ async function agregarAlbum() {
   console.log(nuevoAlbum); 
 
   try {
-    const response = await axios.post('http://localhost:4500/Albums', nuevoAlbum);
+    const response = await axios.post('http://localhost:4500/album', nuevoAlbum);
     mostrarAlbumEnDOM(response.data);
 
-    // Limpiar el formulario
+   
     const form = document.getElementById('Agregar');
-    form.reset(); // Esto restablece los campos del formulario a su valor inicial
+    form.reset(); 
   } catch (error) {
     console.error('Error al agregar el álbum:', error);
   }
@@ -50,12 +38,12 @@ function mostrarAlbumEnDOM(album) {
   albumElement.innerHTML = `
   <h3>${album.Titulo}</h3>
   <p><strong>Año de Lanzamiento:</strong> ${album.Año_de_lanzamiento}</p>
-  <p><strong>Descripción:</strong> ${album.Descripcion}</p>  <!-- Cambia de 'Descripción' a 'Descripcion' -->
+  <p><strong>Descripción:</strong> ${album.Descripción}</p>  <!-- Cambia de 'Descripción' a 'Descripcion' -->
   <a href="${album.Agregar_URL}" target="_blank">
     <i class="fa-solid fa-play"></i> Escuchar
   </a>
-  <button class="editar-btn"><i class="fa-regular fa-pen-to-square"></i> Editar</button>
-  <button class="eliminar-btn"><i class="fa-solid fa-trash"></i> Eliminar</button>
+  <button class="editar-btn" id="iconos"><i class="fa-regular fa-pen-to-square"></i> Editar</button>
+  <button class="eliminar-btn" id="iconos"><i class="fa-solid fa-trash"></i> Eliminar</button>
   `;
 
   document.getElementById('album-list').appendChild(albumElement);
@@ -69,20 +57,20 @@ function mostrarAlbumEnDOM(album) {
 
 }
 
-// Función para editar un álbum (PUT)
+// Función para editar un álbum 
 async function editarAlbum(id, albumElement) {
   const nuevosDatos = {
     Titulo: prompt('Nuevo Título:', albumElement.querySelector('h3').textContent),
     Año_de_lanzamiento: prompt('Nuevo Año de Lanzamiento:', albumElement.querySelector('p:nth-child(2)').textContent.split(': ')[1]),
-    descripcion: prompt('Nueva Descripción:', albumElement.querySelector('p:nth-child(3)').textContent.split(': ')[1]),
+    Descripción: prompt('Nueva Descripción:', albumElement.querySelector('p:nth-child(3)').textContent.split(': ')[1]),
     Agregar_URL: prompt('Nueva URL:', albumElement.querySelector('a').href)
   };
 
   try {
-    const response = await axios.put(`http://localhost:4500/Albums/${id}`, nuevosDatos);
+    const response = await axios.put(`http://localhost:4500/album/${id}`, nuevosDatos);
     albumElement.querySelector('h3').textContent = nuevosDatos.Titulo;
     albumElement.querySelector('p:nth-child(2)').textContent = `Año de Lanzamiento: ${nuevosDatos.Año_de_lanzamiento}`;
-    albumElement.querySelector('p:nth-child(3)').textContent = `Descripción: ${nuevosDatos.descripcion}`;
+    albumElement.querySelector('p:nth-child(3)').textContent = `Descripción: ${nuevosDatos.Descripción}`;
     albumElement.querySelector('a').href = nuevosDatos.Agregar_URL;
     albumElement.querySelector('a').textContent = " Escuchar";
   } catch (error) {
@@ -90,12 +78,13 @@ async function editarAlbum(id, albumElement) {
   }
 }
 
-// Función para eliminar un álbum (DELETE)
+// Función para eliminar 
 async function eliminarAlbum(id, albumElement) {
   try {
-    await axios.delete(`http://localhost:4500/Albums/${id}`);
-    albumElement.remove();  // Elimina el álbum del DOM
+    await axios.delete(`http://localhost:4500/album/${id}`);
+    albumElement.remove();  
   } catch (error) {
     console.error('Error al eliminar el álbum:', error);
   }
 }
+

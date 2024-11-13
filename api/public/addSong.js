@@ -2,9 +2,9 @@ const BASE_URL = 'http://localhost:4500/song';
 const form = document.getElementById('Agregar');
 const songsList = document.getElementById('songs-list');
 
-// Acción al enviar el formulario
+
 form.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Evita el envío tradicional
+    e.preventDefault(); /
 
     // Captura los valores ingresados
     const titulo = document.getElementById('titulo').value;
@@ -13,11 +13,11 @@ form.addEventListener('submit', async (e) => {
     const nuevaCancion = { titulo, duracion, url };
 
     try {
-        // POST con Axios
+        
         const response = await axios.post(BASE_URL, nuevaCancion);
-        const songId = response.data._id; // Obtén el ID de la canción recién creada
+        const songId = response.data._id; 
 
-        // Crear nuevo div para mostrar la canción agregada
+        
         const newSongDiv = document.createElement('div');
         newSongDiv.classList.add('song-item');
         newSongDiv.dataset.id = songId;
@@ -31,19 +31,19 @@ form.addEventListener('submit', async (e) => {
             <button class="eliminar-btn"><i class="fa-solid fa-trash"></i> Eliminar</button>
         `;
 
-        // Añadir el div al DOM
+       
         songsList.appendChild(newSongDiv);
 
-        // Configurar eventos para los botones de editar y eliminar
+        
         const editBtn = newSongDiv.querySelector('.editar-btn');
         const deleteBtn = newSongDiv.querySelector('.eliminar-btn');
         editBtn.addEventListener('click', () => editarCancion(songId));
         deleteBtn.addEventListener('click', () => {
-          const songId = newSongDiv.dataset.id; // Obtener el ID desde el data-id del div
-          eliminarCancion(songId); // Pasar el ID a la función de eliminación
+          const songId = newSongDiv.dataset.id; 
+          eliminarCancion(songId); 
       });
 
-        // Limpia el formulario
+       
         form.reset();
 
         // SweetAlert de éxito
@@ -95,11 +95,11 @@ async function editarCancion(id) {
             })
         });
 
-        // Si se ingresaron valores, procede a la actualización
+       
         if (formValues) {
             const response = await axios.put(`${BASE_URL}/${id}`, formValues);
 
-            // Actualizar la canción en el DOM
+         
             songDiv.querySelector('h3').innerText = response.data.titulo;
             songDiv.querySelector('p').innerText = `Duración: ${response.data.duracion}`;
             songDiv.querySelector('a').href = response.data.url;
@@ -135,10 +135,10 @@ async function eliminarCancion(id) {
       });
 
       if (confirmDelete.isConfirmed) {
-          // Asegúrate de pasar el ID correcto
+          
           await axios.delete(`http://localhost:4500/song/${id}`);
 
-          // Eliminar el div de la canción del DOM
+          
           const songDiv = document.querySelector(`[data-id="${id}"]`);
           if (songDiv) {
               songDiv.remove();

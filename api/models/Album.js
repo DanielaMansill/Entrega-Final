@@ -15,7 +15,7 @@ const album = new mongoose.Schema({
       type: String,
       require: [true, '¡Dale vida al nuevo himno del rock! El nombre del álbum es obligatorio para marcar su historia.']
   },
-  Descripcion: {
+  Descripción: {
       type: String,
       require: [true, '¡Cuéntanos sobre el álbum! La descripción es obligatoria.'],
       minLength: [5, '¡La descripción debe tener al menos 5 caracteres!'],

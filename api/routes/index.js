@@ -8,10 +8,12 @@ const songsRouter = require('./song');
 const usersRouter = require('./users');
 
 
-router.use('/albums', albumsRouter);
+router.use('/album', albumsRouter);
 router.use('/song', songsRouter);
 router.use('/users', usersRouter);
-router.use('/api/songs', songsRouter);
+
+
+
 
 
 

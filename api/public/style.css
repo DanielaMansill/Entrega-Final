@@ -256,7 +256,7 @@ text-align: center;
 
 }
 .contenedor-editar{
-    height: 600px;
+    height: 700px;
     width: 400px;
   
     margin-left: 100px;
@@ -292,6 +292,19 @@ text-align: center;
     margin-top: 10px;
 }
 
+#button-consultar{
+    width: 200px;
+   height: 40px;
+    background-color:black;
+    border-radius: 10px;
+    color: white;
+    border: solid #A6A6A6 2px;
+    margin-top: 10px;
+}
+#iconos{
+    font-size: large;
+
+}
 
 .addAlbum { 
     padding: 80px 40px 40px 40px;
@@ -782,4 +795,57 @@ text-align: center;
     width: 40px;
     height: 40px;
     color: gold;
+}
+
+#album-container-tit {
+    color: white; /* Color de la letra blanco */
+     /* Borde blanco de 2px */
+    padding: 20px; /* Espacio interno */
+    width: 80%; /* Ancho del contenedor */
+    max-width: 600px; /* Ancho máximo para limitar en pantallas grandes */
+    margin: 0 auto; /* Centrado horizontal */
+    text-align: center; /* Alineación central del texto */
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Tamaños de los encabezados y el párrafo en escala */
+  #album-container-tit h3 {
+    font-size: 2em; /* Tamaño mayor para el h3 */
+    margin-bottom: 10px;
+  }
+  
+  #album-container-tit p {
+    font-size: 1.2em; /* Tamaño intermedio para el párrafo */
+    margin-bottom: 8px;
+  }
+  
+  #album-container-tit h4 {
+    font-size: 1em; /* Tamaño menor para el h4 */
+  }
+  
+  #button-agregar, #album-filter, #album-container-tit {
+    margin: 0;
+  }
+  
+  .input-album {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  #album-container-tit {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline;
+  }
+
+.albumes{
+    width: 100%;
+}
+.consultar-album{
+   display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
 }

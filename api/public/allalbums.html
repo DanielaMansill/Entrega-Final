@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-<body class="bg-cover" style="background-image: url(https://wallpapercave.com/wp/3EkaZns.jpg)">
+<body class="bg-neutral-600	" >
 
     <header class="header max-sm text-center sm:text-left @media not all and (min-width: 640px) " >
         <nav class="nav-li">
@@ -27,15 +27,31 @@
             </ul>
         </nav>
     </header>
-    <br><br><br><br><br><br><br><br><br><br>
 
-    <button type="button" id="button-agregar">Consultar Álbum</button>
-<input type="text" id="album-filter" placeholder class="Ingrese el nombre del álbum"><br>
-<br>
-<ul id="album-container-tit"></ul>
+    <div class="contenido pt-20 ">
+        <div class="width height background-color" style="height: 100vw; width:25%; background-color: black;"> 
+            <div class="siderbar">
+                <div class="usuario"> <div><img id="imagen-proto-persona" src="Imagenes/image (8).png" alt=""></div><div class="items-stretch" align-items: stretch;>Alvaro Valerio</div></div>
+                <div id="div"><a href="landindSigUp.html">Albumes de la Banda</a></div>
+                    <div id="div"><a href="addAbum.html">Editar Albúm</a></div>
+                    <div id="div"><a href="addSong.html">Agregar Canción</a></div>
+                    <div id="div"><a href="signUp.html">Log Out</a></div>
+            </div>
+           
+        </div>
+    
 
-<button type="button" id="button-consultar">Consultar todos los álbumes</button>
-<div id="album-container-tit"></div>
+    
+    <div class="albumes">
+        <div class="consultar-album"> 
+            <button type="button" id="button-agregar">Consultar Álbum</button> 
+            <input type="text" id="album-filter" class="w-64 rounded-sm	text-center text-black		" placeholder="Ingrese el nombre del álbum"> <button type="button" id="button-consultar">Consultar todos los álbumes</button> </div>
+            <ul id="album-container-tit"></ul>
+            <div id="album-container-tit"></div>
+     
+    </div>
+   
+
   
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

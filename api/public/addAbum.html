@@ -34,7 +34,7 @@
         <div class="width height background-color" style="height: 100vw; width:25%; background-color: black;"> 
             <div class="siderbar">
                 <div class="usuario"> <div><img id="imagen-proto-persona" src="Imagenes/image (8).png" alt=""></div><div class="items-stretch" align-items: stretch;>Alvaro Valerio</div></div>
-                <div id="div"><a href="landindSigUp.html">Otros Albumes</a></div>
+                <div id="div"><a href="allalbums.html">Albumes de la Banda</a></div>
                     <div id="div"><a href="addAbum.html">Editar Albúm</a></div>
                     <div id="div"><a href="addSong.html">Agregar Canción</a></div>
                     <div id="div"><a href="signUp.html">Log Out</a></div>
@@ -62,23 +62,33 @@
                         <input class="placeholder-editar" type="text" id="url" placeholder="Agregar URL">
                     </label><br>
                     <button type="button" id="button-agregar" >Agregar Álbum</button>
+                    <br><br><br>
+
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass" id="iconos"></i>
+                        <form id="form-buscar-album">
+                            <input type="text" id="titulo-buscar" placeholder="Buscar álbum por título" required />
+                            <button type="submit" id="button-consultar">Consultar</button>
+                          </form>
+                          
+                    </div>
+                    <div id="album-container" class="contenido pt-20 max-sm text-center sm:text-left"></div> 
 
                  
 
 
                 </form>
             </div>
-            <!-- <button type="button" >consultar Álbum</button>
-
-            <input type="text"> -->
+            
 
         </div>
         <div class="addAlbum" id="album-container">
             <h2 class="album-title">Tus albumes</h2>
             <div id="album-list" class="album-list"></div>
+
         </div>
 
-        
+       
 
     </div>
 
@@ -90,6 +100,8 @@
         });
         </script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+ 
+
  <script src="addAlbum.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     

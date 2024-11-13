@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
     const newSong = new Song(req.body);
     try {
         await newSong.save();
-        res.status(201).json({ _id: newSong._id }); // Asegúrate de enviar el _id
+        res.status(201).json({ _id: newSong._id }); 
     } catch (error) {
         console.log('Error al agregar la canción:', error);
         res.status(500).send('Error al crear la canción.');
