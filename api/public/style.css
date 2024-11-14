@@ -815,6 +815,14 @@ text-align: center;
     border: 2px solid white;
   }
   
+  #album-container-tit li {
+    margin: 5px 0; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 2px; 
+    border: 2px solid white; 
+    padding: 10px; 
+    list-style-type: none; 
+}
 
   #album-container-tit h3 {
     font-size: 2em; 
@@ -891,7 +899,7 @@ text-align: center;
 }
 
 @media (max-width: 480px) {
-    /* Extra small screens, portrait smartphones */
+    
     .container {
         flex-direction: column;
         padding: 5px;
