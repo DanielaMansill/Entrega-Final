@@ -2,43 +2,34 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 
-const express = require('express');  // Llamando a Express
+const express = require('express');
 const mongoose = require('mongoose');
-require('dotenv').config();  
-
-const url = process.env.DATABASE_URL;
-const app = express();
-const PORT = process.env.PORT || 4500;  
-
-const router = require('./routes/index.js');
-const user = require('./models/User.js');
-const album = require('./models/Album.js');
-const song = require('./models/song.js');
-
-
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser'); 
+const bodyParser = require('body-parser');
+const path = require('path');
+const router = require('./routes/index.js');
 
+// Comprobación de `DATABASE_URL`
+if (!process.env.DATABASE_URL) {
+  console.error('DATABASE_URL no está definido en el archivo .env');
+  process.exit(1); 
+}
 
+const app = express();
+const PORT = process.env.PORT || 4500;
+const url = process.env.DATABASE_URL;
+
+// Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());  
-
-const path = require('path');
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-
 app.use("/health", (req, res) => res.sendStatus(200));
 
-// Rutas
-app.use('/', router);
-
-
+// Configuración de vistas y rutas
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-
-
-
+app.use('/', router);
 app.use('/imagenes', express.static(path.join(__dirname, 'public', 'Imagenes')));
 
 // Conexión a MongoDB
@@ -54,4 +45,3 @@ const connectToMongo = async () => {
 };
 
 connectToMongo();
-
