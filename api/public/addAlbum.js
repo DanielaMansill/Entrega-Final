@@ -44,8 +44,7 @@ document.getElementById("button-agregar").addEventListener("click", () => {
   agregarAlbum(); 
 });
 
-const buttonAgregar = document.getElementById('button-agregar');
-buttonAgregar.addEventListener('click', agregarAlbum);
+
 
 // Función para agregar un álbum (POST)
 async function agregarAlbum() {

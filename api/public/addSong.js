@@ -20,10 +20,10 @@ form.addEventListener('submit', async (e) => {
         newSongDiv.classList.add('song-item');
         newSongDiv.dataset.id = songId;
         newSongDiv.innerHTML = `
-            <h3>${titulo}</h3>
+           <u><h3>${titulo}</h3></u> 
             <p>Duración: ${duracion}</p>
             <a href="${url}" target="_blank">
-                <i class="fa-solid fa-play"></i> Escuchar
+             <i class="fa-solid fa-headphones"></i> Escuchar
             </a>
             <button class="editar-btn"><i class="fa-regular fa-pen-to-square"></i> Editar</button>
             <button class="eliminar-btn"><i class="fa-solid fa-trash"></i> Eliminar</button>
