@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const express = require('express');  // Llamando a Express
 const mongoose = require('mongoose');
 require('dotenv').config();  
@@ -32,6 +36,7 @@ app.use('/', router);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
 
 
 app.use('/imagenes', express.static(path.join(__dirname, 'public', 'Imagenes')));
