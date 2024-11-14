@@ -12,7 +12,7 @@ form.addEventListener('submit', async (e) => {
     const nuevaCancion = { titulo, duracion, url };
 
     try {
-        const response = await axios.post('https://proyecto-daniela-mansilla-p5.onrender.com/songs', nuevaCancion);
+        const response = await axios.post('https://proyecto-daniela-mansilla-p5.onrender.com/song', nuevaCancion);
         
         const songId = response.data._id;
 
