@@ -1,10 +1,9 @@
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production') { 
   require('dotenv').config();
 }
 
 const express = require('express');
 const mongoose = require('mongoose');
-
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -17,7 +16,7 @@ if (!process.env.DATABASE_URL) {
 }
 
 const app = express();
-const PORT = process.env.PORT || 4500;
+const PORT = process.env.PORT || 4500;  // Esto usa el puerto asignado por Render o el puerto local 4500
 const url = process.env.DATABASE_URL;
 
 // Middleware

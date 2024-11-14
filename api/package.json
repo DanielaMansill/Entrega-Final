@@ -20,6 +20,11 @@
   },
   "engines": {
     "node": "16.x"
+  },
+  "compilerOptions": {
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "target": "ES6"
   }
 }
 
