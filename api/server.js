@@ -1,6 +1,6 @@
 const express = require('express') // va a llamar a express en node_modules
 const mongoose = require('mongoose');
-const dotenv= require('dotenv').config()
+const dotenv = require('dotenv').config()
 
 const url = process.env.DATABASE_URL
 const app = express()
