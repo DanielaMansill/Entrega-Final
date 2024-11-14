@@ -7,8 +7,9 @@ async function agregarAlbum() {
   const anio = document.getElementById('Año_de_lanzamiento').value;
   const descripcion = document.getElementById('Descripción').value;
   const url = document.getElementById('url').value;
+  const portada = document.getElementById('portada')
   
-  let imagenAlbum = document.getElementById('portada-url').value; // Intentamos primero con la URL ingresada
+  let imagenAlbum = document.getElementById('portada').value; // Intentamos primero con la URL ingresada
 
   // Si no se proporcionó URL, intentamos obtener la imagen cargada localmente
   if (!imagenAlbum) {
