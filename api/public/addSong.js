@@ -1,23 +1,20 @@
-const BASE_URL = 'https://proyecto-daniela-mansilla-p5.onrender.com/song';
+const BASE_URL = 'https://proyecto-daniela-mansilla-p5.onrender.com/api/songs'; // Cambié la URL
 const form = document.getElementById('Agregar');
 const songsList = document.getElementById('songs-list');
 
-
 form.addEventListener('submit', async (e) => {
-    e.preventDefault(); /
+    e.preventDefault(); 
 
-    // Captura los valores ingresados
+  
     const titulo = document.getElementById('titulo').value;
     const duracion = document.getElementById('duracion').value;
     const url = document.getElementById('Agregar_url').value;
     const nuevaCancion = { titulo, duracion, url };
 
     try {
-        
         const response = await axios.post(BASE_URL, nuevaCancion);
-        const songId = response.data._id; 
+        const songId = response.data._id;
 
-        
         const newSongDiv = document.createElement('div');
         newSongDiv.classList.add('song-item');
         newSongDiv.dataset.id = songId;
@@ -31,22 +28,18 @@ form.addEventListener('submit', async (e) => {
             <button class="eliminar-btn"><i class="fa-solid fa-trash"></i> Eliminar</button>
         `;
 
-       
         songsList.appendChild(newSongDiv);
 
-        
         const editBtn = newSongDiv.querySelector('.editar-btn');
         const deleteBtn = newSongDiv.querySelector('.eliminar-btn');
         editBtn.addEventListener('click', () => editarCancion(songId));
         deleteBtn.addEventListener('click', () => {
           const songId = newSongDiv.dataset.id; 
           eliminarCancion(songId); 
-      });
+        });
 
-       
         form.reset();
 
-        // SweetAlert de éxito
         Swal.fire({
             title: '¡Éxito!',
             text: 'La canción ha sido agregada correctamente.',
@@ -67,19 +60,16 @@ form.addEventListener('submit', async (e) => {
 // Función para editar una canción
 async function editarCancion(id) {
     try {
-        // Selecciona el div con el ID de la canción
         const songDiv = document.querySelector(`[data-id="${id}"]`);
         if (!songDiv) {
             console.error(`No se encontró el elemento con data-id=${id}`);
             return;
         }
 
-        // Obtener los valores actuales de la canción
         const titulo = songDiv.querySelector('h3').innerText;
         const duracion = songDiv.querySelector('p').innerText.split(": ")[1];
         const url = songDiv.querySelector('a').href;
 
-        // Mostrar un formulario de edición con SweetAlert
         const { value: formValues } = await Swal.fire({
             title: 'Editar Canción',
             html: `
@@ -95,11 +85,9 @@ async function editarCancion(id) {
             })
         });
 
-       
         if (formValues) {
             const response = await axios.put(`${BASE_URL}/${id}`, formValues);
 
-         
             songDiv.querySelector('h3').innerText = response.data.titulo;
             songDiv.querySelector('p').innerText = `Duración: ${response.data.duracion}`;
             songDiv.querySelector('a').href = response.data.url;
@@ -135,10 +123,8 @@ async function eliminarCancion(id) {
       });
 
       if (confirmDelete.isConfirmed) {
-          
-          await axios.delete(`http://localhost:4500/song/${id}`);
+          await axios.delete(`${BASE_URL}/${id}`); 
 
-          
           const songDiv = document.querySelector(`[data-id="${id}"]`);
           if (songDiv) {
               songDiv.remove();
