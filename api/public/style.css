@@ -306,15 +306,15 @@ text-align: center;
 
 }
 #icono-info{
-    display: inline-block; /* Para que el span pueda tener un tamaño */
-    width: 50px; /* Ancho del span */
-    height: 50px; /* Altura del span */
-    background-color: #000; /* Fondo negro, puedes cambiarlo */
-    border-radius: 50%; /* Para hacerlo redondo */
-    border: 2px solid white; /* Borde blanco de 2px */
-    text-align: center; /* Alinea el contenido dentro del span */
-    line-height: 50px; /* Centra el texto verticalmente */
-    color: white; /* Color del texto */
+    display: inline-block; 
+    width: 50px; 
+    height: 50px; 
+    background-color: #000; 
+    border-radius: 50%; 
+    border: 2px solid white; 
+    text-align: center; 
+    line-height: 50px; 
+    color: white; 
     font-size: 24px;
       cursor: pointer;
       position: relative;
@@ -471,6 +471,52 @@ text-align: center;
     color: white;
     border: solid #A6A6A6 2px;
     margin-top: 10px;
+}
+
+#button-addAlbum{
+    width: 200px;
+    height: 75px;
+     background-color:black;
+     border-radius: 20px;
+     color: white;
+     border: solid #A6A6A6 2px;
+     margin-top: 10px;
+     font-size: x-large;
+     margin-right: 10px;
+
+}
+#button-addAlbum-consultar{
+    width: 200px;
+    height: 75px;
+     background-color:black;
+     border-radius: 20px;
+     color: white;
+     border: solid #A6A6A6 2px;
+     margin-top: 10px;
+     font-size: x-large;
+
+}
+
+button {
+    background-color: #A6A6A6; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    text-align: center; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.3s, transform 0.3s; 
+}
+
+/* Efecto hover */
+button:hover {
+    background-color:  #A6A6A6;
+    
+}
+
+button:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 .addSongs{

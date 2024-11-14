@@ -68,7 +68,7 @@ function displayAlbums(albums) {
     listItem.innerHTML = `
       <h3>${album.Titulo}</h3>
       <p><strong>Escucha el álbum:</strong> <a href="${album.Agregar_URL}" target="_blank">
-    <i class="fa-solid fa-headphones"></i> Escuchar en línea</a>
+    <i class="fa-solid fa-headphones"></i> Escuchar</a>
 </p>
       <p>Año de Lanzamiento: ${album.Año_de_lanzamiento}</p>
       <p>Descripción: ${album.Descripción}</p>
@@ -90,5 +90,5 @@ function displayAlbums(albums) {
 }
 
 // Asignación de eventos a los botones
-document.getElementById('button-agregar').addEventListener('click', filterAndDisplayAlbum);
-document.getElementById('button-consultar').addEventListener('click', loadAllAlbums);
+document.getElementById('button-addAlbum').addEventListener('click', filterAndDisplayAlbum);
+document.getElementById('button-addAlbum-consultar').addEventListener('click', loadAllAlbums);

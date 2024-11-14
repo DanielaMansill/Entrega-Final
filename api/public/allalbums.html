@@ -11,8 +11,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.css">
 
-<body class=" bg-cover bg-no-repeat bg-contain" style="background-image: url(https://www.merca2.es/wp-content/uploads/2020/05/alfombra-pvc-discos-vinilos1-kWvC-U80815105344o8D-1248x770@El-Correo.jpg)">
+<body class=" bg-cover bg-no-repeat bg-contain" style="background-image: url(https://pbs.twimg.com/profile_images/1771236401293717506/ZGK_Z2bu_400x400.jpg)">
 
     <header class="header max-sm text-center sm:text-left @media not all and (min-width: 640px) " >
         <nav class="nav-li">
@@ -36,6 +37,7 @@
                     <div id="div"><a href="addAbum.html">Editar Albúm</a></div>
                     <div id="div"><a href="addSong.html">Agregar Canción</a></div>
                     <div id="div"><a href="signUp.html">Log Out</a></div>
+                    
             </div>
            
         </div>
@@ -44,8 +46,11 @@
     
     <div class="albumes">
         <div class="consultar-album"> 
-            <button type="button" id="button-agregar">Consultar Álbum</button> 
-            <input type="text" id="album-filter" class="w-64 rounded-sm	text-center text-black		" placeholder="Ingrese el nombre del álbum"> <button type="button" id="button-consultar">Consultar todos los álbumes</button> </div>
+            <div><span id="icono-info"><i class="fa-solid fa-info"></i><span class="tooltip">"¡Podrás escuchar los álbumes y descubrir todas las canciones! <br> ¿Cuál será tu favorito? <br>¡Atrévete a darle play y vive la experiencia completa de la banda!</span></span></div>
+            <div><button type="button" id="button-addAlbum">Consultar Álbum</button><input type="text" id="album-filter" class="w-64 rounded-sm	text-center text-black h-14" placeholder="Ingrese el nombre del álbum"> 
+            <br>
+            <div><button type="button" id="button-addAlbum-consultar">Consultar todos los álbumes</button> </div>
+            </div>
             <ul id="album-container-tit"></ul>
             <div id="album-container-tit"></div>
      
