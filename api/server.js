@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const path = require('path');
 const router = require('./routes/index.js');
+const cors = require('cors');
 
 // Comprobación de `DATABASE_URL`
 if (!process.env.DATABASE_URL) {
