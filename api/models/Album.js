@@ -19,7 +19,7 @@ const album = new mongoose.Schema({
       type: String,
       require: [true, '¡Cuéntanos sobre el álbum! La descripción es obligatoria.'],
       minLength: [5, '¡La descripción debe tener al menos 5 caracteres!'],
-      maxLength: [200, '¡La descripción no puede tener más de 200 caracteres!'],
+      maxLength: [400, '¡La descripción no puede tener más de 400 caracteres!'],
   },
   Año_de_lanzamiento: {
       type: Number,
