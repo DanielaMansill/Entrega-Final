@@ -399,7 +399,7 @@ text-align: center;
 .album-item h3 {
     font-size: 1.2rem;
     margin: 0;
-    color: linear-gradient(360deg, rgba(41, 40, 40, 0.9) 0%, #C89116 90%);
+    color: #8f650c;
 }
 
 .album-item p, .album-item a {
