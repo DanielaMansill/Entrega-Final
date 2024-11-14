@@ -64,14 +64,9 @@
                     <button type="button" id="button-agregar" >Agregar Álbum</button>
                     <br><br><br>
 
-                    <div>
-                        <i class="fa-solid fa-magnifying-glass" id="iconos"></i>
-                        <form id="form-buscar-album">
-                            <input type="text" id="titulo-buscar" placeholder="Buscar álbum por título" required />
-                            <button type="submit" id="button-consultar">Consultar</button>
-                          </form>
-                          
-                    </div>
+                    <div class="icono">
+                        
+                      </div>
                     <div id="album-container" class="contenido pt-20 max-sm text-center sm:text-left"></div> 
 
                  
@@ -83,6 +78,8 @@
 
         </div>
         <div class="addAlbum" id="album-container">
+            <span id="icono-info"><i class="fa-solid fa-info"></i><span class="tooltip">"¿Listo para agregar un álbum pero no sabes por dónde empezar? <br> En la barra lateral, en <br><u>'Álbumes de la Banda'</u> , encontrarás toda la inspiración que necesitas para que tu lista de albumes cobre vida. <br>¡Vamos, que la música no espera!"</span></span>
+                        <br>
             <h2 class="album-title">Tus albumes</h2>
             <div id="album-list" class="album-list"></div>
 

@@ -256,7 +256,7 @@ text-align: center;
 
 }
 .contenedor-editar{
-    height: 700px;
+    height: 550px;
     width: 400px;
   
     margin-left: 100px;
@@ -304,6 +304,20 @@ text-align: center;
 #iconos{
     font-size: large;
 
+}
+#icono-info{
+    display: inline-block; /* Para que el span pueda tener un tamaño */
+    width: 50px; /* Ancho del span */
+    height: 50px; /* Altura del span */
+    background-color: #000; /* Fondo negro, puedes cambiarlo */
+    border-radius: 50%; /* Para hacerlo redondo */
+    border: 2px solid white; /* Borde blanco de 2px */
+    text-align: center; /* Alinea el contenido dentro del span */
+    line-height: 50px; /* Centra el texto verticalmente */
+    color: white; /* Color del texto */
+    font-size: 24px;
+      cursor: pointer;
+      position: relative;
 }
 
 .addAlbum { 
@@ -921,3 +935,41 @@ text-align: center;
         gap: 10px;
     }
 }
+
+#icono-info {
+    position: relative; 
+    display: inline-block;
+    cursor: pointer; 
+    
+    width: 50px; 
+    height: 50px; 
+    background-color: #000; 
+    border-radius: 50%; 
+    border: 2px solid white; 
+    text-align: center; 
+    line-height: 50px; 
+    color: white; 
+  }
+  
+  .tooltip {
+    visibility: hidden; 
+    width: 350px; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white; 
+    text-align: center; 
+    border-radius: 5px; 
+    padding: 10px;
+    position: absolute;
+    top: 100%; 
+    
+    left: 50%;
+    transform: translateX(-50%); 
+    opacity: 0; 
+    transition: opacity 0.3s; 
+    z-index: 1; 
+  }
+  
+  #icono-info:hover .tooltip {
+    visibility: visible; 
+    opacity: 1; 
+  }
