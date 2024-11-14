@@ -1,4 +1,4 @@
-const BASE_URL = 'https://proyecto-daniela-mansilla-p5.onrender.com/api/songs'; // Cambié la URL
+const BASE_URL = 'https://proyecto-daniela-mansilla-p5.onrender.com/songs'; // Cambié la URL
 const form = document.getElementById('Agregar');
 const songsList = document.getElementById('songs-list');
 
