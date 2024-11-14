@@ -41,7 +41,21 @@ const album = new mongoose.Schema({
           Duracion: { type: String, require: true },
           Portada: { type: String, require: [true, 'Ingresa URL o Link de Youtube'] },
       }
-  ]
+  ],
+  Portada: {
+    type: String,
+    required: false, // Portada opcional
+    validate: {
+      validator: function (v) {
+        // Si se proporciona una URL, validar que sea válida
+        if (v) {
+          return /^(http|https):\/\/[^ "]+$/.test(v) || /\.(jpg|jpeg|png|gif)$/i.test(v); // Valida URL o archivo local
+        }
+        return true; // Si no hay portada, se acepta sin validación
+      },
+      message: '¡La portada debe ser una URL válida o una ruta a un archivo de imagen válido!'
+    }
+  },
 });
 
 

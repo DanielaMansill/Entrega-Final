@@ -67,6 +67,9 @@ function displayAlbums(albums) {
     const listItem = document.createElement('li');
     listItem.innerHTML = `
       <h3>${album.Titulo}</h3>
+      <p><strong>Escucha el álbum:</strong> <a href="${album.Agregar_URL}" target="_blank">
+    <i class="fa-solid fa-headphones"></i> Escuchar en línea</a>
+</p>
       <p>Año de Lanzamiento: ${album.Año_de_lanzamiento}</p>
       <p>Descripción: ${album.Descripción}</p>
       <img src="${album.portada}" alt="Portada" style="width:100px;">
@@ -80,6 +83,7 @@ function displayAlbums(albums) {
         }
       </ul>
       <hr>
+      
     `;
     albumContainer.appendChild(listItem);
   });
