@@ -81,7 +81,7 @@ async function editarAlbum(id, albumElement) {
 // Función para eliminar 
 async function eliminarAlbum(id, albumElement) {
   try {
-    await axios.delete(`http://localhost:4500/album/${id}`);
+    await axios.delete(`https://proyecto-daniela-mansilla-p5.onrender.com/album/${id}`);
     albumElement.remove();  
   } catch (error) {
     console.error('Error al eliminar el álbum:', error);

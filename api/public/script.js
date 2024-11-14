@@ -13,7 +13,7 @@ console.log("Conectado correctamente");
 
   async function consultarAlbum() {
     try {
-      const response = await axios.get('http://localhost:4500/album');
+      const response = await axios.get('https://proyecto-daniela-mansilla-p5.onrender.com/album');
       console.log(response.data);
     } catch (error) {
       console.error(error);
@@ -27,7 +27,7 @@ console.log("Conectado correctamente");
 // Función para obtener todos los álbumes desde la base de datos
 async function loadAllAlbums() {
   try {
-    const response = await axios.get('http://localhost:4500/album');
+    const response = await axios.get('https://proyecto-daniela-mansilla-p5.onrender.com/album');
     albumsAll = response.data;
     displayAlbums(albumsAll);
   } catch (error) {
@@ -45,7 +45,7 @@ async function filterAndDisplayAlbum() {
   }
 
   try {
-    const response = await axios.get(`http://localhost:4500/album/${albumTitle}`);
+    const response = await axios.get(`https://proyecto-daniela-mansilla-p5.onrender.com/album/${albumTitle}`);
     const album = response.data;
 
     if (album && album.Titulo) { // Verificamos que el álbum contiene un título

@@ -10,7 +10,7 @@ const path = require('path');
 const router = require('./routes/index.js');
 const cors = require('cors');
 
-// Verificación de la variable de entorno DATABASE_URL
+
 if (!process.env.DATABASE_URL) {
   console.error('DATABASE_URL no está definido en el archivo .env');
   process.exit(1); 
@@ -20,15 +20,15 @@ const app = express();
 const PORT = process.env.PORT || 4500;  
 const url = process.env.DATABASE_URL;
 
-// Configuración de CORS
+
 const corsOptions = {
-  origin: 'https://proyecto-daniela-mansilla-p5.onrender.com', // Permitir solo tu dominio
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
-  allowedHeaders: ['Content-Type'], // Encabezados permitidos
+  origin: 'https://proyecto-daniela-mansilla-p5.onrender.com',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+  allowedHeaders: ['Content-Type'], 
 };
 
-// Middleware
-app.use(cors(corsOptions)); // Habilitar CORS con las opciones definidas
+
+app.use(cors(corsOptions)); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
