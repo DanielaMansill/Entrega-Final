@@ -4,10 +4,17 @@ const Song = require('../models/song');
 
 // Crear una canción
 router.post('/', async (req, res) => {
-    const newSong = new Song(req.body);
+    
     try {
-        await newSong.save();
-        res.status(201).json({ _id: newSong._id }); 
+        const newSong = new Song({
+            titulo: req.body.titulo,
+            duracion: req.body.duracion,
+            url: req.body.url,
+
+        })
+        const cancionGuardada = await newSong.save()
+        
+        res.status(201).json(cancionGuardada); 
     } catch (error) {
         console.log('Error al agregar la canción:', error);
         res.status(500).send('Error al crear la canción.');
