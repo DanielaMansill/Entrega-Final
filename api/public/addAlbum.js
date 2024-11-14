@@ -90,7 +90,7 @@ function mostrarAlbumEnDOM(album) {
   editarButton.addEventListener('click', () => editarAlbum(album._id, albumElement));
   eliminarButton.addEventListener('click', () => eliminarAlbum(album._id, albumElement));
 
-}
+
 
 // Función para editar un álbum 
 async function editarAlbum(id, albumElement) {
