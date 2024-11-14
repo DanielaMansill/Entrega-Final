@@ -20,7 +20,7 @@ async function agregarAlbum() {
   console.log(nuevoAlbum); 
 
   try {
-    const response = await axios.post('http://localhost:4500/album', nuevoAlbum);
+    const response = await axios.post('https://proyecto-daniela-mansilla-p5.onrender.com/album', nuevoAlbum);
     mostrarAlbumEnDOM(response.data);
 
    
@@ -67,7 +67,7 @@ async function editarAlbum(id, albumElement) {
   };
 
   try {
-    const response = await axios.put(`http://localhost:4500/album/${id}`, nuevosDatos);
+    const response = await axios.put(`https://proyecto-daniela-mansilla-p5.onrender.com/album/${id}`, nuevosDatos);
     albumElement.querySelector('h3').textContent = nuevosDatos.Titulo;
     albumElement.querySelector('p:nth-child(2)').textContent = `Año de Lanzamiento: ${nuevosDatos.Año_de_lanzamiento}`;
     albumElement.querySelector('p:nth-child(3)').textContent = `Descripción: ${nuevosDatos.Descripción}`;

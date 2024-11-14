@@ -1,4 +1,5 @@
-const cors = require('cors'); 
+
+
 const express = require('express');
 const Album = require('../models/Album');
 const router = express.Router();
