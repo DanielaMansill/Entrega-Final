@@ -87,7 +87,7 @@ async function editarCancion(id) {
         });
 
         if (formValues) {
-            const response = await axios.put(`https://proyecto-daniela-mansilla-p5.onrender.com/songs/${id}`, formValues);
+            const response = await axios.put(`https://proyecto-daniela-mansilla-p5.onrender.com/song/${id}`, formValues);
 
             songDiv.querySelector('h3').innerText = response.data.titulo;
             songDiv.querySelector('p').innerText = `Duración: ${response.data.duracion}`;
@@ -124,7 +124,7 @@ async function eliminarCancion(id) {
       });
 
       if (confirmDelete.isConfirmed) {
-          await axios.delete(`https://proyecto-daniela-mansilla-p5.onrender.com/songs/${id}`); 
+          await axios.delete(`https://proyecto-daniela-mansilla-p5.onrender.com/song/${id}`); 
 
           const songDiv = document.querySelector(`[data-id="${id}"]`);
           if (songDiv) {

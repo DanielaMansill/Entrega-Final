@@ -5,7 +5,7 @@ body {
     color: black;
     font-family: "Bebas Neue", sans-serif;
     justify-content: space-evenly;
-     /* Agregar un padding para evitar que el contenido quede debajo de la barra fija */
+     
 }
 .header {
     position: fixed;
@@ -797,30 +797,35 @@ text-align: center;
     color: gold;
 }
 
+#consulta-general{
+    background-color: rgb(79, 79, 79);
+    
+    
+    
+
+}
 #album-container-tit {
-    color: white; /* Color de la letra blanco */
-     /* Borde blanco de 2px */
-    padding: 20px; /* Espacio interno */
-    width: 80%; /* Ancho del contenedor */
-    max-width: 600px; /* Ancho máximo para limitar en pantallas grandes */
-    margin: 0 auto; /* Centrado horizontal */
-    text-align: center; /* Alineación central del texto */
-    background: rgba(0, 0, 0, 0.7);
+    color: white; 
+    padding: 20px;
+    width: fit-content;
+    margin: 0 auto; 
+    text-align: center; 
+    background-color: rgba(0, 0, 0, 0.7);
   }
   
-  /* Tamaños de los encabezados y el párrafo en escala */
+
   #album-container-tit h3 {
-    font-size: 2em; /* Tamaño mayor para el h3 */
+    font-size: 2em; 
     margin-bottom: 10px;
   }
   
   #album-container-tit p {
-    font-size: 1.2em; /* Tamaño intermedio para el párrafo */
+    font-size: 1.2em; 
     margin-bottom: 8px;
   }
   
   #album-container-tit h4 {
-    font-size: 1em; /* Tamaño menor para el h4 */
+    font-size: 1em; 
   }
   
   #button-agregar, #album-filter, #album-container-tit {
@@ -829,7 +834,7 @@ text-align: center;
   
   .input-album {
     padding: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid white;
     border-radius: 4px;
   }
   
@@ -838,12 +843,14 @@ text-align: center;
     padding: 0;
     margin: 0;
     display: inline;
+    width: 80%;
   }
 
 .albumes{
     width: 100%;
 }
 .consultar-album{
+   margin-top: 50px;
    display: flex;
     justify-content: space-evenly;
     align-items: center;
