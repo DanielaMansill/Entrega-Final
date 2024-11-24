@@ -41,6 +41,20 @@ document.getElementById('login-form').addEventListener('submit', function(event)
   }
 });
 
+document.getElementById("login-form").addEventListener("submit", function (event) {
+  event.preventDefault(); 
+
+
+  const username = document.getElementById("nombre").value;
+  const email = document.getElementById("email").value;
+
+
+  localStorage.setItem("username", username);
+  localStorage.setItem("email", email);
+
+
+  window.location.href = "landindSigUp.html";
+});
 
 
 

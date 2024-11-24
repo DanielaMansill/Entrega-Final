@@ -12,7 +12,7 @@ const user = new mongoose.Schema({
     nombre:{type:String, require:[true, '¡El nombre es obligatorio para unirte a la rebelión del rock!'],
         minLength: [2, 'El nombre debe tener al menos 2 caracteres'],
     },
-    apellido:{type:String, require:[true, '¡El apellido es obligatorio para completar tu legado rockero!'],
+    Apellidos:{type:String, require:[true, '¡El apellido es obligatorio para completar tu legado rockero!'],
         minLength: [2, 'El nombre debe tener al menos 2 caracteres'],
     },
     email: {
