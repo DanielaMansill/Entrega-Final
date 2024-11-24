@@ -22,3 +22,13 @@ for ( let i = 0; i < favorito.length; i++) { favorito[i].addEventListener('dblcl
 //             });
 //         })
     
+
+window.addEventListener("DOMContentLoaded", function () {
+    // Recuperar datos del localStorage
+    const username = localStorage.getItem("nombre");
+    const email = localStorage.getItem("email");
+  
+    // Mostrar los datos en el HTML
+    document.getElementById("display-nombre").textContent = username || "Invitado";
+    document.getElementById("display-email").textContent = email || "Sin correo registrado";
+  });
